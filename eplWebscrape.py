@@ -91,6 +91,8 @@ r2_score(numericTestFeatures, yPred)
 # Add prediction column
 categoricalDf['predicted_value'] = rfModel.predict(scaler.transform(numericAttributes))
 categoricalDf['projection'] = categoricalDf['predicted_value'] * categoricalDf['now_cost']
+
+# Separate the data into positional dataframes
 defenderDf = categoricalDf[categoricalDf['position'] == 'Defender']
 goalieDf = categoricalDf[categoricalDf['position'] == 'Goalkeeper']
 middieDf = categoricalDf[categoricalDf['position'] == 'Midfielder']
@@ -110,10 +112,17 @@ def zScore(df):
     df['Z Score'] = (2 * ((df['value'] - dfValueMean)/dfValueSTD)) + (2 * ((df['projection'] - dfProjMean)/dfProjSTD)) + (((df['form']) - dfFormMean)/dfFormSTD)
 
     df['total_rank'] = df['Z Score'].rank(ascending=False)
-    df = df[['value', 'projection', 'now_cost', 'total_rank', 'form']]
-    df = df.sort_values('Total Rank')
+    df = df[['second_name', 'team', 'position', 'value', 'projection', 'now_cost', 'total_rank', 'form']]
+    df = df.sort_values('total_rank')
     return df
+
+# %%
+# pass the positional dataframes through the zScore function
+defenderDf = zScore(defenderDf)
+goalieDf = zScore(goalieDf)
+middieDf = zScore(middieDf)
+forwardDf = zScore(forwardDf)
 
 
 # %%
-# Separate the data into positional dataframes and finally export in needed format
+#  and finally export in needed format
