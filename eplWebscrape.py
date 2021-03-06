@@ -92,6 +92,6 @@ r2_score(numericTestFeatures, yPred)
 categoricalDf['predicted_value'] = rfModel.predict(scaler.transform(numericAttributes))
 # %%
 # The necessary data will be combined into one main dataframe
-categoricalDf.head(10)
+
 # %%
 # Separate the data into positional dataframes and finally export in needed format
