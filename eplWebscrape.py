@@ -83,15 +83,37 @@ search.best_params_
 rfModel = RandomForestRegressor(n_estimators=200)
 rfModel.fit(trainScaled, numericTrainFeatures)
 yPred = rfModel.predict(testScaled)
-# %% 
+# %%
 # test accuracy of model
 r2_score(numericTestFeatures, yPred)
 
 # %%
-# Add prediction column 
+# Add prediction column
 categoricalDf['predicted_value'] = rfModel.predict(scaler.transform(numericAttributes))
+categoricalDf['projection'] = categoricalDf['predicted_value'] * categoricalDf['now_cost']
+defenderDf = categoricalDf[categoricalDf['position'] == 'Defender']
+goalieDf = categoricalDf[categoricalDf['position'] == 'Goalkeeper']
+middieDf = categoricalDf[categoricalDf['position'] == 'Midfielder']
+forwardDf = categoricalDf[categoricalDf['position'] == 'Forward']
+
+
 # %%
-# The necessary data will be combined into one main dataframe
+# calculate Z scores
+def zScore(df):
+    # Calculate means and STD for value and projections
+    dfValueMean = df['value'].mean()
+    dfValueSTD = df['value'].std()
+    dfProjMean = df['projection'].mean()
+    dfProjSTD = df['projection'].std()
+    dfFormMean = df['form'].mean()
+    dfFormSTD = df['form'].std()
+    df['Z Score'] = (2 * ((df['value'] - dfValueMean)/dfValueSTD)) + (2 * ((df['projection'] - dfProjMean)/dfProjSTD)) + (((df['form']) - dfFormMean)/dfFormSTD)
+
+    df['total_rank'] = df['Z Score'].rank(ascending=False)
+    df = df[['value', 'projection', 'now_cost', 'total_rank', 'form']]
+    df = df.sort_values('Total Rank')
+    return df
+
 
 # %%
 # Separate the data into positional dataframes and finally export in needed format
