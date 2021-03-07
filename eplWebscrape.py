@@ -9,6 +9,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import r2_score
+from IPython.display import HTML
 
 # %%
 # set the url for the api in order to pull the data
@@ -123,6 +124,11 @@ goalieDf = zScore(goalieDf)
 middieDf = zScore(middieDf)
 forwardDf = zScore(forwardDf)
 
+# %%
+HTML(defenderDf.head(20).to_html('templates/defenders.html', classes='table table-striped'))
+   
+    
 
 # %%
-#  and finally export in needed format
+# pass dataframes through function
+# %%
