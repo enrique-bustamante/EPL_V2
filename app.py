@@ -11,10 +11,10 @@ def index():
 @app.route('/copies', methods=['POST'])
 def copies():
     if request.method=='POST':
-        os.popen('cp rankings/DefendersRank.csv Rankings/DefendersRank\ copy.csv')
-        os.popen('cp rankings/ForwardsRank.csv Rankings/ForwardsRank\ copy.csv')
-        os.popen('cp rankings/GoalieRank.csv Rankings/GoalieRank\ copy.csv')
-        os.popen('cp rankings/midRank.csv Rankings/MidfielderRank\ copy.csv')
+        os.popen('cp rankings/DefenderRank.csv rankings/DefenderRank\ copy.csv')
+        os.popen('cp rankings/ForwardRank.csv rankings/ForwardRank\ copy.csv')
+        os.popen('cp rankings/GoalieRank.csv rankings/GoalieRank\ copy.csv')
+        os.popen('cp rankings/MidfielderRank.csv rankings/MidfielderRank\ copy.csv')
         return render_template('copies.html')
 
 @app.route('/update', methods=['POST'])

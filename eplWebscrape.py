@@ -44,20 +44,20 @@ elementsDf.dtypes
 
 
 # %%
-elementsDf = elementsDf[['second_name', 'team', 'position', 'form','points_per_game', 'now_cost', 'minutes','goals_scored', 'assists', 'clean_sheets', 'goals_conceded', 'own_goals', 'penalties_saved', 'penalties_missed', 'yellow_cards', 'red_cards', 'saves', 'bonus', 'bps', 'total_points', 'value']]
+elementsDf = elementsDf[['web_name', 'team', 'position', 'form','points_per_game', 'now_cost', 'minutes','goals_scored', 'assists', 'clean_sheets', 'goals_conceded', 'own_goals', 'penalties_saved', 'penalties_missed', 'yellow_cards', 'red_cards', 'saves', 'bonus', 'bps', 'total_points', 'value']]
 elementsDf.isnull().values.any()
 elementsDf.describe()
 # %%
 # separate the dataframe into categorical and numerical values
-categoricalDf = elementsDf[['second_name', 'team', 'position', 'form', 'value', 'now_cost']]
-numericalDf = elementsDf.drop(columns=['second_name', 'team', 'position', 'form', 'now_cost'])
+categoricalDf = elementsDf[['web_name', 'team', 'position', 'form', 'value', 'now_cost']]
+numericalDf = elementsDf.drop(columns=['web_name', 'team', 'position', 'form', 'now_cost'])
 
 # %%
 # import the rankings from the prior week
-defLWRDf = pd.read_csv('rankings/DefenderRank.csv')['second_name','team', 'total_rank']
-golLWRDf = pd.read_csv('rankings/GoalieRank.csv')['second_name', 'team', 'total_rank']
-midLWRDf = pd.read_csv('rankings/MidfielderRank.csv')['second_name', 'team', 'total_rank']
-forLWRDf = pd.read_csv('rankings/ForwardRank.csv')['second_name', 'team', 'total_rank']
+defLWRDf = pd.read_csv('rankings/DefenderRank copy.csv')[['web_name','team', 'total_rank']]
+golLWRDf = pd.read_csv('rankings/GoalieRank copy.csv')[['web_name', 'team', 'total_rank']]
+midLWRDf = pd.read_csv('rankings/MidfielderRank copy.csv')[['web_name', 'team', 'total_rank']]
+forLWRDf = pd.read_csv('rankings/ForwardRank copy.csv')[['web_name', 'team', 'total_rank']]
 
 # %%
 # split data into training and tessting sets
@@ -85,10 +85,12 @@ search = GridSearchCV(RandomForestRegressor(), param_grid=parameters, cv=5)
 search.fit(trainScaled, numericTrainFeatures)
 
 # %%
-search.best_params_
+# convert best parameter into integer for use in the model
+bestParam = search.best_params_.get('n_estimators')
+
 
 # %%
-rfModel = RandomForestRegressor(n_estimators=200)
+rfModel = RandomForestRegressor(n_estimators=bestParam)
 rfModel.fit(trainScaled, numericTrainFeatures)
 yPred = rfModel.predict(testScaled)
 # %%
@@ -120,7 +122,7 @@ def zScore(df):
     df['Z Score'] = (2 * ((df['value'] - dfValueMean)/dfValueSTD)) + (2 * ((df['projection'] - dfProjMean)/dfProjSTD)) + (((df['form']) - dfFormMean)/dfFormSTD)
 
     df['total_rank'] = df['Z Score'].rank(ascending=False)
-    df = df[['second_name', 'team', 'position', 'value', 'projection', 'now_cost', 'total_rank', 'form']]
+    df = df[['web_name', 'team', 'position', 'value', 'projection', 'now_cost', 'total_rank', 'form']]
     df = df.sort_values('total_rank')
     return df
 
@@ -137,6 +139,7 @@ defenderDf['last_week_rank'] = defLWRDf['total_rank']
 goalieDf['last_week_rank'] = golLWRDf['total_rank']
 middieDf['last_week_rank'] = midLWRDf['total_rank']
 forwardDf['last_week_rank'] = forLWRDf['total_rank']
+defenderDf.head(20)
 
 # %%
 HTML(defenderDf.head(20).to_html('templates/defenders.html', classes='table table-striped'))
