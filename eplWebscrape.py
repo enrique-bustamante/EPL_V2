@@ -54,10 +54,10 @@ numericalDf = elementsDf.drop(columns=['web_name', 'team', 'position', 'form', '
 
 # %%
 # import the rankings from the prior week
-defLWRDf = pd.read_csv('rankings/DefenderRank copy.csv')[['web_name','team', 'total_rank']]
-golLWRDf = pd.read_csv('rankings/GoalieRank copy.csv')[['web_name', 'team', 'total_rank']]
-midLWRDf = pd.read_csv('rankings/MidfielderRank copy.csv')[['web_name', 'team', 'total_rank']]
-forLWRDf = pd.read_csv('rankings/ForwardRank copy.csv')[['web_name', 'team', 'total_rank']]
+defLWRDf = pd.read_csv('rankings/DefenderRank copy.csv', index_col=0)[['web_name','team', 'total_rank']]
+golLWRDf = pd.read_csv('rankings/GoalieRank copy.csv', index_col=0)[['web_name', 'team', 'total_rank']]
+midLWRDf = pd.read_csv('rankings/MidfielderRank copy.csv', index_col=0)[['web_name', 'team', 'total_rank']]
+forLWRDf = pd.read_csv('rankings/ForwardRank copy.csv', index_col=0)[['web_name', 'team', 'total_rank']]
 
 # %%
 # split data into training and tessting sets
