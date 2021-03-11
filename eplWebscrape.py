@@ -20,11 +20,13 @@ url = 'https://fantasy.premierleague.com/api/bootstrap-static/'
 r = requests.get(url)
 json = r.json()
 json.keys()
+
 # %%
 # create the dataframes that will be used to create the main dataframe
 elementsDf = pd.DataFrame(json['elements'])
 elementTypesDf = pd.DataFrame(json['element_types'])
 teamsDf = pd.DataFrame(json['teams'])
+
 # %%
 # Add columns from other categories in the JSON file
 elementsDf['position'] = elementsDf.element_type.map(elementTypesDf.set_index('id').singular_name)
@@ -47,17 +49,19 @@ elementsDf.dtypes
 elementsDf = elementsDf[['web_name', 'team', 'position', 'form','points_per_game', 'now_cost', 'minutes','goals_scored', 'assists', 'clean_sheets', 'goals_conceded', 'own_goals', 'penalties_saved', 'penalties_missed', 'yellow_cards', 'red_cards', 'saves', 'bonus', 'bps', 'total_points', 'value']]
 elementsDf.isnull().values.any()
 elementsDf.describe()
-# %%
-# separate the dataframe into categorical and numerical values
-categoricalDf = elementsDf[['web_name', 'team', 'position', 'form', 'value', 'now_cost']]
-numericalDf = elementsDf.drop(columns=['web_name', 'team', 'position', 'form', 'now_cost'])
+elementsDf.set_index(['web_name'])
 
 # %%
+# separate the dataframe into categorical and numerical values
+categoricalDf = elementsDf[['web_name', 'team', 'position', 'form', 'value', 'now_cost']].set_index(['web_name'])
+numericalDf = elementsDf.drop(columns=['team', 'position', 'form', 'now_cost']).set_index(['web_name'])
+print([categoricalDf.head(), numericalDf.head()])
+# %%
 # import the rankings from the prior week
-defLWRDf = pd.read_csv('rankings/DefenderRank copy.csv', index_col=0)[['web_name','team', 'total_rank']]
-golLWRDf = pd.read_csv('rankings/GoalieRank copy.csv', index_col=0)[['web_name', 'team', 'total_rank']]
-midLWRDf = pd.read_csv('rankings/MidfielderRank copy.csv', index_col=0)[['web_name', 'team', 'total_rank']]
-forLWRDf = pd.read_csv('rankings/ForwardRank copy.csv', index_col=0)[['web_name', 'team', 'total_rank']]
+defLWRDf = pd.read_csv('rankings/DefenderRank copy.csv', index_col=0)[['team', 'total_rank']]
+golLWRDf = pd.read_csv('rankings/GoalieRank copy.csv', index_col=0)[['team', 'total_rank']]
+midLWRDf = pd.read_csv('rankings/MidfielderRank copy.csv', index_col=0)[['team', 'total_rank']]
+forLWRDf = pd.read_csv('rankings/ForwardRank copy.csv', index_col=0)[['team', 'total_rank']]
 
 # %%
 # split data into training and tessting sets
@@ -107,7 +111,7 @@ defenderDf = categoricalDf[categoricalDf['position'] == 'Defender']
 goalieDf = categoricalDf[categoricalDf['position'] == 'Goalkeeper']
 middieDf = categoricalDf[categoricalDf['position'] == 'Midfielder']
 forwardDf = categoricalDf[categoricalDf['position'] == 'Forward']
-
+print(defenderDf)
 
 # %%
 # calculate Z scores
@@ -122,7 +126,7 @@ def zScore(df):
     df['Z Score'] = (2 * ((df['value'] - dfValueMean)/dfValueSTD)) + (2 * ((df['projection'] - dfProjMean)/dfProjSTD)) + (((df['form']) - dfFormMean)/dfFormSTD)
 
     df['total_rank'] = df['Z Score'].rank(ascending=False)
-    df = df[['web_name', 'team', 'position', 'value', 'projection', 'now_cost', 'total_rank', 'form']]
+    df = df[['team', 'position', 'value', 'projection', 'now_cost', 'total_rank', 'form']]
     df = df.sort_values('total_rank')
     return df
 
@@ -132,7 +136,7 @@ defenderDf = zScore(defenderDf)
 goalieDf = zScore(goalieDf)
 middieDf = zScore(middieDf)
 forwardDf = zScore(forwardDf)
-
+print(defenderDf)
 # %%
 # add last week rank
 defenderDf['last_week_rank'] = defLWRDf['total_rank']
@@ -148,10 +152,10 @@ HTML(middieDf.head(20).to_html('templates/midfielders.html', classes='table tabl
 HTML(forwardDf.head(20).to_html('templates/forwards.html', classes='table table-striped'))
 
 # %%
-defenderDf.to_csv('rankings/DefenderRank.csv')
-goalieDf.to_csv('rankings/GoalieRank.csv')
-middieDf.to_csv('rankings/MidfielderRank.csv')
-forwardDf.to_csv('rankings/ForwardRank.csv')
+defenderDf.to_csv('rankings/DefenderRank.csv',index=True)
+goalieDf.to_csv('rankings/GoalieRank.csv', index=True)
+middieDf.to_csv('rankings/MidfielderRank.csv', index=True)
+forwardDf.to_csv('rankings/ForwardRank.csv',index=True)
 
 
 

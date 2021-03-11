@@ -1,6 +1,7 @@
 # Import dependencies
 from flask import Flask, render_template, request
 import os
+from Scripts import eplWebscrape
 
 app = Flask(__name__)
 
@@ -20,7 +21,7 @@ def copies():
 @app.route('/update', methods=['POST'])
 def update():
     if request.method=='POST':
-        os.popen('python eplWebscrape.py')
+        eplWebscrape.webscrape()
         return render_template('update.html')
 
 @app.route('/defenders')
