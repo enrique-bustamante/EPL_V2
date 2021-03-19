@@ -58,10 +58,10 @@ numericalDf = elementsDf.drop(columns=['team', 'position', 'form', 'now_cost']).
 print([categoricalDf.head(), numericalDf.head()])
 # %%
 # import the rankings from the prior week
-defLWRDf = pd.read_csv('rankings/DefenderRank copy.csv', index_col=0)[['team', 'total_rank']]
-golLWRDf = pd.read_csv('rankings/GoalieRank copy.csv', index_col=0)[['team', 'total_rank']]
-midLWRDf = pd.read_csv('rankings/MidfielderRank copy.csv', index_col=0)[['team', 'total_rank']]
-forLWRDf = pd.read_csv('rankings/ForwardRank copy.csv', index_col=0)[['team', 'total_rank']]
+#defLWRDf = pd.read_csv('rankings/DefenderRank copy.csv', index_col=0)[['team', 'total_rank']]
+#golLWRDf = pd.read_csv('rankings/GoalieRank copy.csv', index_col=0)[['team', 'total_rank']]
+#midLWRDf = pd.read_csv('rankings/MidfielderRank copy.csv', index_col=0)[['team', 'total_rank']]
+#forLWRDf = pd.read_csv('rankings/ForwardRank copy.csv', index_col=0)[['team', 'total_rank']]
 
 # %%
 # split data into training and tessting sets
@@ -139,11 +139,10 @@ forwardDf = zScore(forwardDf)
 print(defenderDf)
 # %%
 # add last week rank
-defenderDf['last_week_rank'] = defLWRDf['total_rank']
-goalieDf['last_week_rank'] = golLWRDf['total_rank']
-middieDf['last_week_rank'] = midLWRDf['total_rank']
-forwardDf['last_week_rank'] = forLWRDf['total_rank']
-defenderDf.head(20)
+#defenderDf['last_week_rank'] = defLWRDf['total_rank']
+#goalieDf['last_week_rank'] = golLWRDf['total_rank']
+#middieDf['last_week_rank'] = midLWRDf['total_rank']
+#forwardDf['last_week_rank'] = forLWRDf['total_rank']
 
 # %%
 HTML(defenderDf.head(20).to_html('templates/defenders.html', classes='table table-striped'))

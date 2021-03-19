@@ -1,80 +1,81 @@
 web_name,team,position,value,projection,now_cost,total_rank,form
-Martínez,Aston Villa,Goalkeeper,27.59259259259259,139.0859859719701,5.4,1.0,6.6
-Pope,Burnley,Goalkeeper,22.5,128.1105049533922,5.6,2.0,4.0
-Meslier,Leeds,Goalkeeper,24.1304347826087,109.1297486315621,4.6,3.0,4.4
-Areola,Fulham,Goalkeeper,23.77777777777778,102.37674770627635,4.5,4.0,5.0
-Ederson,Man City,Goalkeeper,20.16393442622951,126.18720664439284,6.1,5.0,4.0
-Johnstone,West Brom,Goalkeeper,20.666666666666668,93.26897397317386,4.5,6.0,6.2
-Lloris,Spurs,Goalkeeper,20.0,114.55712717733061,5.6,7.0,4.2
-Mendy,Chelsea,Goalkeeper,20.3921568627451,101.4759449601593,5.1,8.0,4.8
-Fabianski,West Ham,Goalkeeper,21.0,102.97874443622852,5.0,9.0,4.0
-Patrício,Wolves,Goalkeeper,19.056603773584907,102.16503425465787,5.3,10.0,4.8
-Guaita,Crystal Palace,Goalkeeper,20.208333333333336,97.27527399976195,4.8,11.0,4.0
-Schmeichel,Leicester,Goalkeeper,19.636363636363637,109.66818177864786,5.5,12.0,2.4
-Leno,Arsenal,Goalkeeper,19.8,98.62196291776172,5.0,13.0,2.8
-Pickford,Everton,Goalkeeper,16.458333333333336,78.22413789476657,4.8,14.0,4.8
-Ramsdale,Sheffield Utd,Goalkeeper,16.956521739130437,77.35980229795335,4.6,15.0,4.2
-de Gea,Man Utd,Goalkeeper,16.41509433962264,87.70110559085818,5.3,16.0,2.8
-McCarthy,Southampton,Goalkeeper,18.22222222222222,79.18802803580836,4.5,17.0,0.8
-Alisson,Liverpool,Goalkeeper,13.559322033898304,84.29722209393593,5.9,18.0,1.8
-Darlow,Newcastle,Goalkeeper,16.0,80.3704950914834,5.0,19.0,1.0
-Sánchez,Brighton,Goalkeeper,13.777777777777779,59.652997071409764,4.5,20.0,2.5
-Henderson,Man Utd,Goalkeeper,3.6538461538461537,18.70204116136962,5.2,21.0,2.8
-Ryan,Arsenal,Goalkeeper,6.904761904761904,28.874957561238876,4.2,22.0,0.0
-Arrizabalaga,Chelsea,Goalkeeper,3.1914893617021276,14.520676317768533,4.7,23.0,1.8
-Dubravka,Newcastle,Goalkeeper,2.0833333333333335,10.451785343302367,4.8,24.0,2.5
-Forster,Southampton,Goalkeeper,3.5,13.02968385035423,4.0,25.0,1.3
-Adrián,Liverpool,Goalkeeper,2.619047619047619,10.942185815223443,4.2,26.0,1.8
-Olsen,Everton,Goalkeeper,2.6666666666666665,11.762199839130762,4.5,27.0,0.2
-Kelleher,Liverpool,Goalkeeper,2.2222222222222223,9.79854875934597,4.5,28.0,0.0
-Randolph,West Ham,Goalkeeper,1.627906976744186,6.837168273629841,4.3,29.0,0.2
-Button,West Brom,Goalkeeper,0.5128205128205129,1.8888858379151494,3.9,30.0,0.0
-Casilla,Leeds,Goalkeeper,0.47619047619047616,1.8722026143790806,4.2,31.0,0.0
-Steffen,Man City,Goalkeeper,0.45454545454545453,1.9577953806845696,4.4,32.0,0.0
-Rodák,Fulham,Goalkeeper,0.23255813953488372,0.9919378914357702,4.3,33.0,0.0
-Caballero,Chelsea,Goalkeeper,0.2173913043478261,1.0371996318890548,4.6,34.0,0.0
-Rúnarsson,Arsenal,Goalkeeper,0.22727272727272727,0.9420465154374711,4.4,35.0,0.0
-Foderingham,Sheffield Utd,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Moore,Sheffield Utd,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Verrips,Sheffield Utd,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Langley,Newcastle,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Gillespie,Newcastle,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Nyland,Aston Villa,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Steer,Aston Villa,Goalkeeper,0.0,0.0,3.9,57.0,0.0
-Ziger,Chelsea,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Lewis,Southampton,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Gazzaniga,Spurs,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Hart,Spurs,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Lonergan,West Brom,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Martin,West Ham,Goalkeeper,0.0,0.0,3.9,57.0,0.0
-Macey,Arsenal,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Roberto,West Ham,Goalkeeper,0.0,0.0,4.5,57.0,0.0
-Trott,West Ham,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Ruddy,Wolves,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Gunn,Southampton,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Heaton,Aston Villa,Goalkeeper,0.0,0.0,4.5,57.0,0.0
-Romero,Man Utd,Goalkeeper,0.0,0.0,4.9,57.0,0.0
-Walton,Brighton,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Hennessey,Crystal Palace,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Henderson,Crystal Palace,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Butland,Crystal Palace,Goalkeeper,0.0,0.0,4.5,57.0,0.0
-Lössl,Everton,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Norris,Burnley,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Virgínia,Everton,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Tyrer,Everton,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Fabri,Fulham,Goalkeeper,0.0,0.0,3.9,57.0,0.0
-Bettinelli,Fulham,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Grant,Man Utd,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-McGill,Brighton,Goalkeeper,0.0,0.0,3.9,57.0,0.0
-Miazek,Leeds,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Caprile,Leeds,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Sarkic,Wolves,Goalkeeper,0.0,0.0,4.4,57.0,0.0
-Hughes,Liverpool,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Ojrzynski,Liverpool,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Bravo,Man City,Goalkeeper,0.0,0.0,4.5,57.0,0.0
-Steele,Brighton,Goalkeeper,0.0,0.0,3.9,57.0,0.0
-Trafford,Man City,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Carson,Man City,Goalkeeper,0.0,0.0,3.9,57.0,0.0
-Ward,Leicester,Goalkeeper,0.0,0.0,4.3,57.0,0.0
-Söndergaard,Wolves,Goalkeeper,0.0,0.0,4.0,57.0,0.0
-Peacock-Farrell,Burnley,Goalkeeper,0.0,-0.02,4.0,79.0,0.0
+Martínez,Aston Villa,Goalkeeper,28.148148148148145,142.98923816718312,5.4,1.0,4.8
+Meslier,Leeds,Goalkeeper,26.521739130434785,117.64083510345853,4.6,2.0,5.5
+Areola,Fulham,Goalkeeper,24.22222222222222,105.03516080349733,4.5,3.0,4.6
+Mendy,Chelsea,Goalkeeper,22.156862745098042,103.84402300725651,5.1,4.0,5.5
+Pope,Burnley,Goalkeeper,22.857142857142858,130.47669586219817,5.6,5.0,3.0
+Guaita,Crystal Palace,Goalkeeper,21.875,102.79375628737223,4.8,6.0,5.4
+Johnstone,West Brom,Goalkeeper,21.333333333333332,101.13987364459577,4.5,7.0,5.7
+Ederson,Man City,Goalkeeper,21.147540983606557,129.83238740073384,6.1,8.0,3.1
+Patrício,Wolves,Goalkeeper,19.62264150943396,107.66258765281106,5.3,9.0,5.0
+Lloris,Spurs,Goalkeeper,20.17857142857143,117.13249841036848,5.6,10.0,4.0
+Fabianski,West Ham,Goalkeeper,21.6,105.86402906927788,5.0,11.0,3.8
+Schmeichel,Leicester,Goalkeeper,20.727272727272727,115.90912391062409,5.5,12.0,3.0
+Leno,Arsenal,Goalkeeper,20.2,101.62979080417466,5.0,13.0,2.6
+Ramsdale,Sheffield Utd,Goalkeeper,17.17391304347826,83.05207273674134,4.6,14.0,3.7
+Alisson,Liverpool,Goalkeeper,15.084745762711863,98.97519861905431,5.9,15.0,3.2
+Pickford,Everton,Goalkeeper,16.458333333333336,79.44903417598745,4.8,16.0,4.1
+de Gea,Man Utd,Goalkeeper,16.41509433962264,87.72423943055198,5.3,17.0,2.3
+McCarthy,Southampton,Goalkeeper,18.22222222222222,80.93719006212322,4.5,18.0,0.7
+Darlow,Newcastle,Goalkeeper,16.0,85.71358886521423,5.0,19.0,0.8
+Sánchez,Brighton,Goalkeeper,14.444444444444445,62.59939094520634,4.5,20.0,1.8
+Henderson,Man Utd,Goalkeeper,4.8076923076923075,25.625955999348317,5.2,21.0,3.3
+Dubravka,Newcastle,Goalkeeper,3.125,14.663841299089317,4.8,22.0,3.0
+Ryan,Arsenal,Goalkeeper,6.904761904761904,27.65899949731881,4.2,23.0,0.0
+Forster,Southampton,Goalkeeper,4.0,15.130492771129543,4.0,24.0,1.7
+Arrizabalaga,Chelsea,Goalkeeper,3.1914893617021276,15.040876656245695,4.7,25.0,1.5
+Adrián,Liverpool,Goalkeeper,2.619047619047619,11.06800450551293,4.2,26.0,1.8
+Olsen,Everton,Goalkeeper,2.6666666666666665,12.19653868628922,4.5,27.0,0.1
+Kelleher,Liverpool,Goalkeeper,2.2222222222222223,9.973574019864772,4.5,28.0,0.0
+Randolph,West Ham,Goalkeeper,1.627906976744186,6.389412684851667,4.3,29.0,0.2
+Virgínia,Everton,Goalkeeper,0.46511627906976744,2.006358355533349,4.3,30.0,0.3
+Ruddy,Wolves,Goalkeeper,0.23255813953488372,0.9547755102040789,4.3,31.0,0.2
+Button,West Brom,Goalkeeper,0.5128205128205129,1.9268578683626256,3.9,32.0,0.0
+Casilla,Leeds,Goalkeeper,0.47619047619047616,1.9494659971811132,4.2,33.0,0.0
+Steffen,Man City,Goalkeeper,0.45454545454545453,1.989803322259134,4.4,34.0,0.0
+Rodák,Fulham,Goalkeeper,0.23255813953488372,0.9926141355677578,4.3,35.0,0.0
+Rúnarsson,Arsenal,Goalkeeper,0.22727272727272727,1.010251120829117,4.4,36.0,0.0
+Caballero,Chelsea,Goalkeeper,0.2173913043478261,1.0336877930836674,4.6,37.0,0.0
+Heaton,Aston Villa,Goalkeeper,0.0,0.0,4.5,58.5,0.0
+Hart,Spurs,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+Gunn,Southampton,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+Lonergan,West Brom,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Martin,West Ham,Goalkeeper,0.0,0.0,3.9,58.5,0.0
+Verrips,Sheffield Utd,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Steer,Aston Villa,Goalkeeper,0.0,0.0,3.9,58.5,0.0
+Foderingham,Sheffield Utd,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+Macey,Arsenal,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Moore,Sheffield Utd,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+Langley,Newcastle,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Gillespie,Newcastle,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+Roberto,West Ham,Goalkeeper,0.0,0.0,4.5,58.5,0.0
+Trott,West Ham,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Lewis,Southampton,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Gazzaniga,Spurs,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+Carson,Man City,Goalkeeper,0.0,0.0,3.9,58.5,0.0
+Grant,Man Utd,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Ziger,Chelsea,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Hennessey,Crystal Palace,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+McGill,Brighton,Goalkeeper,0.0,0.0,3.9,58.5,0.0
+Henderson,Crystal Palace,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Butland,Crystal Palace,Goalkeeper,0.0,0.0,4.5,58.5,0.0
+Lössl,Everton,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+Tyrer,Everton,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Fabri,Fulham,Goalkeeper,0.0,0.0,3.9,58.5,0.0
+Bettinelli,Fulham,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+Steele,Brighton,Goalkeeper,0.0,0.0,3.9,58.5,0.0
+Bishop,Man Utd,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Ward,Leicester,Goalkeeper,0.0,0.0,4.3,58.5,0.0
+Walton,Brighton,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Caprile,Leeds,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Sarkic,Wolves,Goalkeeper,0.0,0.0,4.4,58.5,0.0
+Hughes,Liverpool,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Ojrzynski,Liverpool,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Bravo,Man City,Goalkeeper,0.0,0.0,4.5,58.5,0.0
+Nyland,Aston Villa,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Trafford,Man City,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Norris,Burnley,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Romero,Man Utd,Goalkeeper,0.0,0.0,4.9,58.5,0.0
+Miazek,Leeds,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Söndergaard,Wolves,Goalkeeper,0.0,0.0,4.0,58.5,0.0
+Peacock-Farrell,Burnley,Goalkeeper,0.0,-0.025,4.0,80.0,0.0
