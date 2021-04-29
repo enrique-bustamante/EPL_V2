@@ -113,6 +113,31 @@ middieDf = categoricalDf[categoricalDf['position'] == 'Midfielder']
 forwardDf = categoricalDf[categoricalDf['position'] == 'Forward']
 print(defenderDf)
 
+
+#defValueMean = defenderDf['value'].mean()
+#defValueSTD = defenderDf['value'].std()
+#defProjMean = defenderDf['projection'].mean()
+#defProjSTD = defenderDf['projection'].std()
+#defFormMean = defenderDf['form'].mean()
+#defFormSTD = defenderDf['form'].std()
+
+# %%
+#zScoreValue = (defenderDf.loc[:,'value'] - defValueMean)/defValueSTD
+# %%
+#zScoreProjection = (defenderDf.loc[:,'projection'] - defProjMean)/defProjSTD
+# %%
+#zScoreForm = (defenderDf.loc[:,'form'] - defFormMean)/defFormSTD
+# %%
+#defenderDf['Z Score'] = 2 * zScoreValue + 2 * zScoreProjection + zScoreForm
+# %%
+#defenderDf['total_rank'] = defenderDf['Z Score'].rank(ascending=False)
+# %%
+#defenderDf = defenderDf[['team', 'position', 'value', 'projection', 'now_cost', 'total_rank', 'form', 'Z Score']]
+# %%
+#df = defenderDf.sort_values('total_rank')
+#df['Z Score'] = (2 * zScoreValue + (2 * ((df.loc[:,'projection'] - dfProjMean)/dfProjSTD)) + (((df.loc[:,'form']) - dfFormMean)/dfFormSTD)
+
+
 # %%
 # calculate Z scores
 def zScore(df):
@@ -123,20 +148,23 @@ def zScore(df):
     dfProjSTD = df['projection'].std()
     dfFormMean = df['form'].mean()
     dfFormSTD = df['form'].std()
-    df['Z Score'] = (2 * ((df['value'] - dfValueMean)/dfValueSTD)) + (2 * ((df['projection'] - dfProjMean)/dfProjSTD)) + (((df['form']) - dfFormMean)/dfFormSTD)
-
+    zScoreValue = (df.loc[:,'value'] - dfValueMean)/dfValueSTD
+    zScoreProjection = (df.loc[:,'projection'] - dfProjMean)/dfProjSTD
+    zScoreForm = (df.loc[:,'form'] - dfFormMean)/dfFormSTD
+    df['Z Score'] = 2*zScoreValue + 2*zScoreProjection + zScoreForm
     df['total_rank'] = df['Z Score'].rank(ascending=False)
-    df = df[['team', 'position', 'value', 'projection', 'now_cost', 'total_rank', 'form']]
-    df = df.sort_values('total_rank')
-    return df
+    dfZ = df[['team', 'position', 'value', 'projection', 'now_cost', 'total_rank', 'form', 'Z Score']]
+    dfZ = df.sort_values('total_rank')
+    return dfZ
+
 
 # %%
 # pass the positional dataframes through the zScore function
-defenderDf = zScore(defenderDf)
-goalieDf = zScore(goalieDf)
-middieDf = zScore(middieDf)
-forwardDf = zScore(forwardDf)
-print(defenderDf)
+defenderDfZ = zScore(defenderDf)
+goalieDfZ = zScore(goalieDf)
+middieDfZ = zScore(middieDf)
+forwardDfZ = zScore(forwardDf)
+print(middieDfZ)
 # %%
 # add last week rank
 #defenderDf['last_week_rank'] = defLWRDf['total_rank']
@@ -145,16 +173,16 @@ print(defenderDf)
 #forwardDf['last_week_rank'] = forLWRDf['total_rank']
 
 # %%
-HTML(defenderDf.head(20).to_html('templates/defenders.html', classes='table table-striped'))
-HTML(goalieDf.head(20).to_html('templates/goalies.html', classes='table table-striped'))
-HTML(middieDf.head(20).to_html('templates/midfielders.html', classes='table table-striped'))
-HTML(forwardDf.head(20).to_html('templates/forwards.html', classes='table table-striped'))
+HTML(defenderDfZ.head(20).to_html('templates/defenders.html', classes='table table-striped'))
+HTML(goalieDfZ.head(20).to_html('templates/goalies.html', classes='table table-striped'))
+HTML(middieDfZ.head(20).to_html('templates/midfielders.html', classes='table table-striped'))
+HTML(forwardDfZ.head(20).to_html('templates/forwards.html', classes='table table-striped'))
 
 # %%
-defenderDf.to_csv('rankings/DefenderRank.csv',index=True)
-goalieDf.to_csv('rankings/GoalieRank.csv', index=True)
-middieDf.to_csv('rankings/MidfielderRank.csv', index=True)
-forwardDf.to_csv('rankings/ForwardRank.csv',index=True)
+defenderDfZ.to_csv('rankings/DefenderRank.csv',index=True)
+goalieDfZ.to_csv('rankings/GoalieRank.csv', index=True)
+middieDfZ.to_csv('rankings/MidfielderRank.csv', index=True)
+forwardDfZ.to_csv('rankings/ForwardRank.csv',index=True)
 
 
 

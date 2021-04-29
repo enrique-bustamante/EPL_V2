@@ -19,7 +19,7 @@ def copies():
         return render_template('copies.html')
 
 @app.route('/update', methods=['POST'])
-def update():
+def runScript():
     if request.method=='POST':
         eplWebscrape.webscrape()
         return render_template('update.html')
